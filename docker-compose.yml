@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "23645:23645"
+    volumes:
+      - ./shared:/usr/src/app/shared
+    environment:
+      - NGROK_AUTH_TOKEN=${NGROK_AUTH_TOKEN}
