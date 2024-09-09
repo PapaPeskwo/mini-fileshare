@@ -19,5 +19,5 @@ Smol temporary fileshare app to share files. Can be curl'd on a remote server fo
 3. On the client where you want to download, type:
 
 ```sh
-curl -O <ngrok_url_outputed>/${FILE}
+curl -O <outputed_url>/<your_file_name_with_extenstion
 ```
