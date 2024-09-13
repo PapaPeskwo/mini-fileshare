@@ -3,13 +3,15 @@ FROM node:14-slim
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
-    curl
+    curl \
+    openssl
 
 RUN npm install -g localtunnel
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY src/ .
+COPY shared/ ./shared/
 
 RUN chmod +x start.sh
 
