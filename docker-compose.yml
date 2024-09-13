@@ -7,5 +7,3 @@ services:
       - "23645:23645"
     volumes:
       - ./shared:/usr/src/app/shared
-    environment:
-      - NGROK_AUTH_TOKEN=2VbcLfHIbJIsuRblojqaBIBv4LG_2LtJ2jXz6BJ7CvkjW5R2C
