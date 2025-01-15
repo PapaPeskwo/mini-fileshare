@@ -12,4 +12,14 @@ echo "Your public URL is: $PUBLIC_URL"
 echo "Your credentials are:"
 echo "Username: $USERNAME"
 echo "Password: $PASSWORD"
+
+ignore_files=".gitkeep"
+
+find shared/ -maxdepth 1 -type f | while read -r file; do
+    filename=$(basename "$file")
+    if [[ ! " $ignore_files " =~ " $filename " ]]; then
+        echo "curl -u $USERNAME:$PASSWORD -O $PUBLIC_URL/$filename"
+    fi
+done
+
 tail -f /dev/null
